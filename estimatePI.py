@@ -7,23 +7,23 @@ import matplotlib.pyplot as plt
       
 def estimate_pi(n):
 
-    #Counts the points in and out of the circle
+    # Counts the points in and out of the circle
     num_point_incircle = 0
     num_point_total = 0
     
-    #list to hold our points to graph
+    # list to hold our points to graph
     x_list_in = []
     y_list_in = []
     x_list_out= []
     y_list_out = []
     
-    #for loop to plot the number of points
+    # For loop to plot the number of points
     for _ in range(n):
         x = random.uniform(-1,1)
         y = random.uniform(-1,1)
         
-        #calculates whether the point is in or outside of the circle and adds to
-        #appropriate list
+        # Calculates whether the point is in or outside of the circle and adds to
+        # appropriate list
         distance = x**2 + y**2
         if distance <= 1:
             num_point_incircle += 1
@@ -52,11 +52,12 @@ def estimate_pi(n):
     plt.scatter(x_list_out, y_list_out, s=3, c='b')
     plt.show()
     
-    #returns our number Pi
+    # Returns our number Pi
     return 4 * num_point_incircle/num_point_total
     
 def main(estimate_pi):
     n = int(input("Enter a number: "))
     print(estimate_pi(n))
 
+# Main function
 main(estimate_pi)
